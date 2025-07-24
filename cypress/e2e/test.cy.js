@@ -6,8 +6,7 @@ describe("Idurarapp - Companies", () => {
     cy.visit(loginPage.url);
     cy.get(loginPage.selectors.pageText).contains("Manage Your Company With");
     cy.fixture("/credentials").then((credentials) => {
-      const { email } = credentials;
-      const password = Cypress.env("PASSWORD");
+      const { email, password } = credentials;
       cy.get(loginPage.selectors.emailInput).type(email);
       cy.get(loginPage.selectors.passwordInput).type(password);
     });
